@@ -1,0 +1,207 @@
+* {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eef9ee;
+            color: #222;
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .logo {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .logo span {
+            flex: 1;
+            font-size: 1.15rem;
+        }
+/********************* hamburger ******************/
+        .hamburger {
+            border: none;
+            background: none;
+            color: #3d405b;
+            cursor: pointer;
+        }
+
+        .hamburger::before {
+            content: "\2630";
+            font-size: 2rem;
+        }
+
+        .hamburger.show::before {
+            content: "\00D7";
+            font-size: 2rem;
+        }
+
+        .navigation {
+            width: 100%;
+            background: #222;
+        }
+
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navigation li {
+            border-bottom: 1px solid #000;
+        }
+
+        .navigation a {
+            display: block;
+            padding: 11px 10px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .navigation li.current a,
+        .navigation a:hover {
+            background: #444;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 12px 20px;
+            background: #fff;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin: 4px 0 6px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .about-section,
+        .photo-section,
+        .courses-section {
+            background: #ddd;
+        }
+
+        section h2 {
+            margin: 0;
+            padding: 6px 8px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .about-content {
+            padding: 8px;
+            line-height: 1.28;
+            font-size: 0.92rem;
+        }
+
+        .about-content p {
+            margin: 0;
+        }
+
+        .photo-container {
+            min-height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+        }
+
+        .photo-container img {
+            display: block;
+            width: min(100%, 310px);
+            max-height: 310px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .courses-section {
+            margin-top: 14px;
+            padding-bottom: 4px;
+        }
+
+        .course-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            padding: 8px;
+        }
+
+        .course-buttons button {
+            min-height: 30px;
+            border: 1px solid #555;
+            border-radius: 3px;
+            background: #bbb;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .course-buttons button:nth-child(n + 4) {
+            grid-column: 1 / -1;
+            border-radius: 0;
+        }
+
+        .course-count {
+            margin: 0;
+            padding: 0 8px 8px;
+            text-align: center;
+            font-size: 0.78rem;
+        }
+/*****************************FOOTER********************/
+
+        footer {
+            background-color: #eee;
+            padding: 1rem 10px;
+            text-align: center;
+           
+        }
+
+.social {
+        display: flex;
+        justify-content: center;
+        column-gap: 8px;
+    }
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border: #ccc solid 1px;
+    border-radius: 22px;
+    
+}
+.social img {
+    width: 22px;
+    height: 22px;
+
+}
+.social a:hover {
+    background-color: #ddd;
+}
+
