@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Personal home page for Claudio.">
-    <meta name="author" content="Claudio">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claudio's Site</title>
 
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
-
-
 </head>
 
 <body>
@@ -19,17 +15,20 @@
         <div class="logo">
             <img src="images/home.svg" alt="Site logo" width="512" height="512">
             <span>Claudio's Site</span>
-            <button id="ham-btn" class="hamburger" aria-label="Open navigation menu" aria-expanded="false"></button>
         </div>
+
+        <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false"></button>
     </header>
 
-    <nav id="nav-bar" class="navigation" aria-label="Main navigation">
+    <!-- substitute for "desktop-links" -->
+    <nav class="navigation">
         <ul>
-            <li class="current"><a href="#">Home</a></li>
+            <li class="current"><a href="#" aria-current="page">Home</a></li>
             <li><a href="#">Chamber Project</a></li>
             <li><a href="#">Final Project</a></li>
         </ul>
     </nav>
+    
 
     <main>
         <h1>Home</h1>
@@ -66,16 +65,16 @@
             <h2>Web Certificate Courses</h2>
 
             <div class="course-buttons">
-                <button type="button">All</button>
-                <button type="button">CSE</button>
-                <button type="button">WDD</button>
-                <button type="button">WDD 130</button>
-                <button type="button">WDD 131</button>
-                <button type="button">WDD 231</button>
+                <button type="button" id="all-btn" class="active">All</button>
+                <button type="button" id="wdd-btn">WDD</button>
+                <button type="button" id="cse-btn">CSE</button>
             </div>
 
+
+            <div id="course-list"></div>
+
             <p class="course-count">
-                The total credits for course listed above is 6
+                Total Credits: <span id="total-credits">0</span>
             </p>
         </section>
     </main>
@@ -102,5 +101,6 @@
     </footer>
 
     <script src="scripts/navigation.js"></script>
+    <script src="scripts/courselist.js"></script>
 </body>
 </html>

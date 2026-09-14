@@ -12,6 +12,8 @@
         header {
             background: #fff;
             border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: center;
         }
 
         .logo {
@@ -38,6 +40,11 @@
             background: none;
             color: #3d405b;
             cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            margin-left: auto;
+            margin-right: 8px;
+            flex-shrink: 0;
         }
 
         .hamburger::before {
@@ -53,6 +60,11 @@
         .navigation {
             width: 100%;
             background: #222;
+            display: none;
+        }
+
+        .navigation.show {
+            display: block;
         }
 
         .navigation ul {
@@ -163,6 +175,66 @@
         .course-buttons button:nth-child(n + 4) {
             grid-column: 1 / -1;
             border-radius: 0;
+        }
+
+        .course-buttons button.active {
+            background: #3d405b;
+            color: #fff;
+            border-color: #3d405b;
+        }
+
+        #course-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 8px;
+        }
+
+        .course-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border-radius: 3px;
+            border-left: 5px solid #bbb;
+            background: #fff;
+            font-size: 0.9rem;
+        }
+
+        .course-card.completed {
+            background: #eef9ee;
+            border-left-color: #3d405b;
+        }
+
+        .course-card.not-completed {
+            background: #ddd;
+            border-left-color: #888;
+            opacity: 0.85;
+        }
+
+        .course-title {
+            flex: 1;
+            font-weight: 700;
+        }
+
+        .course-credits {
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        .course-status {
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .course-card.completed .course-status {
+            color: #3d405b;
+        }
+
+        .course-card.not-completed .course-status {
+            color: #666;
         }
 
         .course-count {

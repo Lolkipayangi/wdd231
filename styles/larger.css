@@ -1,4 +1,12 @@
  @media (min-width: 700px) {
+            .hamburger {
+                display: none;
+            }
+
+            .navigation {
+                display: block;
+            }
+
             .logo {
                 padding: 10px 20px;
             }
