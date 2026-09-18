@@ -1,0 +1,88 @@
+/* =========================================================
+   Mtwapa Chamber of Commerce
+   larger.css - wider viewport overrides (700px and up)
+   ========================================================= */
+
+@media screen and (min-width: 700px) {
+
+  .site-header {
+    padding: 1rem 2rem;
+    flex-wrap: nowrap;
+  }
+
+  .site-branding img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .site-branding .site-title {
+    font-size: 1.3rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .primary-nav {
+    order: 2;
+    flex-basis: auto;
+    max-height: none;
+    overflow: visible;
+    width: auto;
+  }
+
+  .primary-nav ul {
+    flex-direction: row;
+    border-top: none;
+    margin-top: 0;
+    gap: 0.25rem;
+  }
+
+  .primary-nav a {
+    border-bottom: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+  }
+
+  .primary-nav a[aria-current="page"] {
+    border-left: none;
+    padding-left: 1rem;
+    background-color: var(--color-bg);
+  }
+
+  main {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .page-heading h1 {
+    font-size: 2rem;
+  }
+
+  #directory {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  #directory.list-view {
+    grid-template-columns: 1fr;
+  }
+
+  .member-card {
+    padding: 1.25rem;
+  }
+
+  .footer-wrap {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+  }
+
+  .footer-dev {
+    text-align: right;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

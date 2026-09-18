@@ -1,0 +1,67 @@
+{
+  "members": [
+    {
+      "name": "Mtwapa Creek Boat Tours",
+      "address": "Mtwapa Bridge Road, Mtwapa, Kilifi County",
+      "phone": "(254) 700-112-233",
+      "url": "https://example.com/mtwapa-creek-tours",
+      "image": "boat-tours.svg",
+      "membership": 3,
+      "tagline": "Sunset creek cruises and dhow charters since 2015."
+    },
+    {
+      "name": "Coastal Fresh Market",
+      "address": "Kanamai Road, Mtwapa, Kilifi County",
+      "phone": "(254) 700-223-344",
+      "url": "https://example.com/coastal-fresh-market",
+      "image": "fresh-market.svg",
+      "membership": 2,
+      "tagline": "Locally grown produce and fresh seafood, delivered daily."
+    },
+    {
+      "name": "Baraka Auto Works",
+      "address": "Mombasa-Malindi Highway, Mtwapa, Kilifi County",
+      "phone": "(254) 700-334-455",
+      "url": "https://example.com/baraka-auto-works",
+      "image": "auto-works.svg",
+      "membership": 1,
+      "tagline": "Full-service auto repair and tire care for every vehicle."
+    },
+    {
+      "name": "Pwani Digital Solutions",
+      "address": "Links Road, Mtwapa, Kilifi County",
+      "phone": "(254) 700-445-566",
+      "url": "https://example.com/pwani-digital",
+      "image": "digital-solutions.svg",
+      "membership": 3,
+      "tagline": "Web design, IT support, and digital marketing for local business."
+    },
+    {
+      "name": "Jua Kali Furniture Co.",
+      "address": "Shimo la Tewa Road, Mtwapa, Kilifi County",
+      "phone": "(254) 700-556-677",
+      "url": "https://example.com/jua-kali-furniture",
+      "image": "furniture.svg",
+      "membership": 2,
+      "tagline": "Handcrafted coastal furniture built to order."
+    },
+    {
+      "name": "Kilifi Coffee Roasters",
+      "address": "Mtwapa Town Centre, Mtwapa, Kilifi County",
+      "phone": "(254) 700-667-788",
+      "url": "https://example.com/kilifi-coffee-roasters",
+      "image": "coffee-roasters.svg",
+      "membership": 1,
+      "tagline": "Small-batch coffee roasted fresh from local highland beans."
+    },
+    {
+      "name": "Baharini Legal Associates",
+      "address": "Malindi Road, Mtwapa, Kilifi County",
+      "phone": "(254) 700-778-899",
+      "url": "https://example.com/baharini-legal",
+      "image": "legal-associates.svg",
+      "membership": 3,
+      "tagline": "Business, property, and family law counsel for the coast region."
+    }
+  ]
+}
