@@ -1,8 +1,3 @@
-/* =========================================================
-   Mtwapa Chamber of Commerce
-   larger.css - wider viewport overrides (700px and up)
-   ========================================================= */
-
 @media screen and (min-width: 700px) {
 
   .site-header {
@@ -18,7 +13,6 @@
   .site-branding .site-title {
     font-size: 1.3rem;
   }
-
   .nav-toggle {
     display: none;
   }
@@ -71,6 +65,23 @@
     padding: 1.25rem;
   }
 
+  #directory.list-view .member-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #directory.list-view .member-card > * {
+    min-width: 0;
+  }
+
+  #directory.list-view .member-card img {
+    width: 64px;
+    height: 64px;
+    max-width: 64px;
+    flex-shrink: 0;
+  }
+
   .footer-wrap {
     grid-template-columns: repeat(3, 1fr);
     text-align: left;
@@ -78,6 +89,15 @@
 
   .footer-dev {
     text-align: right;
+  }
+
+  /* ---- Join page: form + membership cards side by side ---- */
+  .join-layout {
+    grid-template-columns: 1.6fr 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
   }
 }
 

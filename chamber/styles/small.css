@@ -1,26 +1,29 @@
-/* =========================================================
-   Mtwapa Chamber of Commerce
-   small.css - base / mobile-first styles (320px and up)
-   ========================================================= */
-
 :root {
   /* Color scheme */
-  --color-primary: #0f6f6b;      /* deep teal - header, buttons, links */
+  --color-primary: #0f6f6b;      
   --color-primary-dark: #0a4f4c;
-  --color-secondary: #e0793c;    /* warm coral/orange - accents, CTAs */
-  --color-accent: #3a5a99;       /* muted blue - secondary accents */
-  --color-bg: #f7f5f0;           /* warm off-white background */
-  --color-surface: #ffffff;      /* card / surface background */
-  --color-text: #202b2a;         /* body text */
-  --color-text-light: #5c6b6a;   /* muted text */
+  --color-secondary: #a85c26;    
+  --color-accent: #3a5a99;       
+  --color-bg: #f7f5f0;           
+  --color-surface: #ffffff;      
+  --color-text: #202b2a;        
+  --color-text-light: #5c6b6a;   
   --color-border: #dfe3e0;
 
-  --color-gold: #b98a2e;
+  --color-gold: #7a5a1e;
   --color-gold-bg: #fbeed7;
-  --color-silver: #6b7680;
+  --color-silver: #52606b;
   --color-silver-bg: #eceef0;
-  --color-member: #4f7d6c;
+  --color-member: #3c6152;
   --color-member-bg: #e2ede8;
+
+  /* Join-page membership tiers: NP + Silver + Gold reuse the directory badge
+     colors above for visual consistency; Bronze reuses the site's existing
+     secondary (rust/copper) color, which already reads as "bronze". */
+  --color-np: var(--color-member);
+  --color-np-bg: var(--color-member-bg);
+  --color-bronze: var(--color-secondary);
+  --color-bronze-bg: #f7e6d6;
 
   --font-heading: "Poppins", "Segoe UI", Arial, sans-serif;
   --font-body: "Open Sans", "Segoe UI", Arial, sans-serif;
@@ -67,9 +70,7 @@ a:focus {
   white-space: nowrap;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* =============HEADER=========================== */
 
 .site-header {
   display: flex;
@@ -168,9 +169,7 @@ a:focus {
   color: var(--color-secondary);
 }
 
-/* =========================================================
-   MAIN / DIRECTORY PAGE
-   ========================================================= */
+/* ==========  MAIN / DIRECTORY PAGE=================== */
 
 main {
   flex: 1 0 auto;
@@ -242,26 +241,20 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
-#directory.list-view .member-card {
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-}
+/* Row-based list layout only kicks in at wider viewports (see larger.css).
+   On narrow screens list-view stays stacked like grid-view, which is what
+   prevents the row of image + badge + name + tagline + details from
+   overflowing the viewport width and causing horizontal scrolling. */
 
 .member-card img {
   width: 100%;
   max-width: 160px;
   border-radius: 8px;
   align-self: center;
-}
-
-#directory.list-view .member-card img {
-  width: 64px;
-  height: 64px;
-  max-width: 64px;
-  flex-shrink: 0;
 }
 
 .member-card .member-name {
@@ -317,9 +310,47 @@ main {
   color: var(--color-gold);
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+.skeleton {
+  background-color: var(--color-border);
+  border-radius: 4px;
+}
+
+.skeleton-img {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.skeleton-badge {
+  width: 4.5rem;
+  height: 1.1rem;
+  border-radius: 999px;
+}
+
+.skeleton-line {
+  height: 0.85rem;
+  width: 100%;
+}
+
+.skeleton-title {
+  height: 1.05rem;
+  width: 65%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .skeleton {
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* =============FOOTER=========================== */
 
 .site-footer {
   background-color: var(--color-primary-dark);
@@ -384,4 +415,273 @@ main {
 
 .footer-dev p {
   margin: 0;
+}
+
+/* =============JOIN PAGE=========================== */
+
+.page-lede {
+  max-width: 60ch;
+  color: var(--color-text-light);
+  margin: 0 0 1.5rem;
+}
+
+.join-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.join-form {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+.join-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.join-form legend {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  padding: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-primary-dark);
+}
+
+.form-field .field-hint {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+}
+
+.join-form input[type="text"],
+.join-form input[type="email"],
+.join-form input[type="tel"],
+.join-form select,
+.join-form textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.join-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.join-form input:focus,
+.join-form select:focus,
+.join-form textarea:focus {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.join-form input:invalid:not(:placeholder-shown) {
+  border-color: var(--color-secondary);
+}
+
+.form-row {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.submit-btn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--color-secondary);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--color-primary-dark);
+}
+
+/* ---- Membership tier cards ---- */
+
+.membership-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.tier-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--tier-color);
+  padding: 1.1rem 1.25rem;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: tier-rise 0.55s ease forwards;
+}
+
+.tier-card--np { --tier-color: var(--color-np); animation-delay: 0.05s; }
+.tier-card--bronze { --tier-color: var(--color-bronze); animation-delay: 0.2s; }
+.tier-card--silver { --tier-color: var(--color-silver); animation-delay: 0.35s; }
+.tier-card--gold { --tier-color: var(--color-gold); animation-delay: 0.5s; }
+
+@keyframes tier-rise {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tier-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tier-card h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.15rem;
+}
+
+.tier-card .tier-price {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin: 0 0 0.5rem;
+}
+
+.tier-card p {
+  font-size: 0.88rem;
+  margin: 0 0 0.6rem;
+}
+
+.tier-card .modal-link {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.tier-card .modal-link:hover,
+.tier-card .modal-link:focus {
+  color: var(--color-secondary);
+}
+
+/* ---- Benefit modals (native <dialog>) ---- */
+
+dialog.benefits-modal {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0;
+  width: 90vw;
+  max-width: 420px;
+  border-top: 6px solid var(--tier-color);
+  box-shadow: var(--shadow);
+}
+
+dialog.benefits-modal::backdrop {
+  background-color: rgba(10, 79, 76, 0.55);
+}
+
+.modal-inner {
+  padding: 1.5rem;
+}
+
+.modal-inner h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.modal-inner ul {
+  padding-left: 1.1rem;
+  margin: 0 0 1.25rem;
+}
+
+.modal-inner li {
+  margin-bottom: 0.4rem;
+  font-size: 0.92rem;
+}
+
+.modal-close {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--color-secondary);
+}
+
+/* =============THANK YOU PAGE=========================== */
+
+.confirmation {
+  background-color: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.confirmation .summary-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.confirmation .summary-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+.confirmation .summary-list .label {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.confirmation .summary-list .value {
+  color: var(--color-text);
+  text-align: right;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-weight: 700;
 }

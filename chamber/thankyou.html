@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Standard meta content -->
-  <title>Business Directory | Mtwapa Chamber of Commerce</title>
-  <meta name="description" content="Browse the directory of local businesses and organizations that belong to the Mtwapa Chamber of Commerce.">
+  <title>Thank You | Mtwapa Chamber of Commerce</title>
+  <meta name="description" content="Confirmation page for new membership applications to the Mtwapa Chamber of Commerce.">
   <meta name="claudio" content="Lbartuni Claudio">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <!-- Facebook / Open Graph meta tags -->
-  <meta property="og:title" content="Business Directory | Mtwapa Chamber of Commerce">
-  <meta property="og:description" content="Browse the directory of local businesses and organizations that belong to the Mtwapa Chamber of Commerce.">
-  <meta property="og:image" content="https://yourusername.github.io/wdd231/chamber/images/directory-social.jpg">
-  <meta property="og:url" content="https://yourusername.github.io/wdd231/chamber/directory.html">
+  <meta property="og:title" content="Thank You | Mtwapa Chamber of Commerce">
+  <meta property="og:description" content="Confirmation page for new membership applications to the Mtwapa Chamber of Commerce.">
+  <meta property="og:image" content="https://yourusername.github.io/wdd231/chamber/images/join-social.jpg">
+  <meta property="og:url" content="https://yourusername.github.io/wdd231/chamber/thankyou.html">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
@@ -29,13 +29,13 @@
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
 
-  <script src="scripts/directory.js" defer></script>
+  <script src="scripts/thankyou.js" defer></script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="site-branding">
-      <img src="images/logo.svg" alt="Nakuru Chamber of Commerce logo">
+      <img src="images/logo.svg" alt="Mtwapa Chamber of Commerce logo">
       <p class="site-title">Mtwapa Chamber<span>of Commerce</span></p>
     </div>
 
@@ -49,23 +49,22 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="discover.html">Discover</a></li>
-        <li><a href="directory.html" aria-current="page">Directory</a></li>
+        <li><a href="directory.html">Directory</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="page-heading">
-      <h1>Member Directory</h1>
-      <div class="view-toggle" role="group" aria-label="Toggle directory view">
-        <button id="gridViewBtn" class="active" type="button" aria-pressed="true" title="Grid view" aria-label="Grid view">&#9638;</button>
-        <button id="listViewBtn" type="button" aria-pressed="false" title="List view" aria-label="List view">&#9776;</button>
-      </div>
-    </div>
+    <section class="confirmation">
+      <h1>Asante sana!</h1>
+      <p>Thank you for applying for membership with the Mtwapa Chamber of Commerce. A member of our team will review your application and reach out within two business days.</p>
 
-    <section id="directory" aria-live="polite">
-      <p class="directory-loading">Loading member businesses&hellip;</p>
+      <ul class="summary-list" id="summaryList" aria-label="Submitted application details">
+        <!-- Populated by scripts/thankyou.js from the URL query string -->
+      </ul>
+
+      <a class="back-link" href="index.html">&larr; Back to home</a>
     </section>
   </main>
 
@@ -75,11 +74,11 @@
       <div class="footer-contact">
         <h2>Contact Us</h2>
         <address>
-          Nakuru Chamber of Commerce<br>
-          P.O. Box 1234, Nakuru<br>
-          Nakuru County, Kenya<br>
+          Mtwapa Chamber of Commerce<br>
+          P.O. Box 1234, Mtwapa<br>
+          Kilifi County, Kenya<br>
           Phone: (254) 700-000-111<br>
-          Email: info@nakuruchamber.org
+          Email: info@mtwapachamber.org
         </address>
       </div>
 

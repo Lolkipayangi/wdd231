@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Standard meta content -->
+  <title>Join the Chamber | Mtwapa Chamber of Commerce</title>
+  <meta name="description" content="Apply for membership with the Mtwapa Chamber of Commerce and choose the level that fits your business.">
+  <meta name="claudio" content="Lbartuni Claudio">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+  <!-- Facebook / Open Graph meta tags -->
+  <meta property="og:title" content="Join the Chamber | Mtwapa Chamber of Commerce">
+  <meta property="og:description" content="Apply for membership with the Mtwapa Chamber of Commerce and choose the level that fits your business.">
+  <meta property="og:image" content="https://yourusername.github.io/wdd231/chamber/images/join-social.jpg">
+  <meta property="og:url" content="https://yourusername.github.io/wdd231/chamber/join.html">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets: normalize first, then mobile-first small.css, then larger.css -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/larger.css">
+
+  <script src="scripts/join.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-branding">
+      <img src="images/logo.svg" alt="Mtwapa Chamber of Commerce logo">
+      <p class="site-title">Mtwapa Chamber<span>of Commerce</span></p>
+    </div>
+
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html" aria-current="page">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-heading">
+      <h1>Join the Chamber</h1>
+    </div>
+    <p class="page-lede">Become part of the network supporting businesses along Mtwapa Creek &mdash; from creekside hotels and eateries to boda boda saccos and boutique shops. Fill out the form below and choose the membership level that fits your business today.</p>
+
+    <div class="join-layout">
+
+      <!-- ===================== FORM ===================== -->
+      <form class="join-form" method="get" action="thankyou.html">
+
+        <fieldset>
+          <legend>Applicant details</legend>
+
+          <div class="form-row">
+            <label class="form-field" for="firstName">
+              First name
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                title="Enter your first name"
+                autocomplete="given-name"
+                required>
+            </label>
+
+            <label class="form-field" for="lastName">
+              Last name
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                title="Enter your last name"
+                autocomplete="family-name"
+                required>
+            </label>
+          </div>
+
+          <label class="form-field" for="orgTitle">
+            Title within your organization
+            <span class="field-hint">Letters, hyphens, and spaces only &mdash; at least 7 characters (e.g. "Operations Manager")</span>
+            <input
+              type="text"
+              id="orgTitle"
+              name="orgTitle"
+              title="Your job title &mdash; letters, hyphens, and spaces only, minimum 7 characters"
+              autocomplete="organization-title"
+              pattern="[A-Za-z\-\s]{7,}">
+          </label>
+
+          <div class="form-row">
+            <label class="form-field" for="email">
+              Email address
+              <input
+                type="email"
+                id="email"
+                name="email"
+                title="Enter your email address"
+                autocomplete="email"
+                placeholder="asha@mtwapatraders.co.ke"
+                required>
+            </label>
+
+            <label class="form-field" for="mobilePhone">
+              Mobile phone number
+              <input
+                type="tel"
+                id="mobilePhone"
+                name="mobilePhone"
+                title="Enter your mobile phone number"
+                autocomplete="tel"
+                required>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Business details</legend>
+
+          <label class="form-field" for="businessName">
+            Business/organization name
+            <input
+              type="text"
+              id="businessName"
+              name="businessName"
+              title="Enter your business or organization's name"
+              autocomplete="organization"
+              required>
+          </label>
+
+          <label class="form-field" for="membershipLevel">
+            Membership level
+            <select id="membershipLevel" name="membershipLevel" title="Choose a membership level" required>
+              <option value="" selected disabled>Select a level&hellip;</option>
+              <option value="np">NP Membership (non-profit, no fee)</option>
+              <option value="bronze">Bronze Membership</option>
+              <option value="silver">Silver Membership</option>
+              <option value="gold">Gold Membership</option>
+            </select>
+          </label>
+
+          <label class="form-field" for="businessDescription">
+            Tell us about your business
+            <textarea
+              id="businessDescription"
+              name="businessDescription"
+              title="Briefly describe your business or organization"></textarea>
+          </label>
+        </fieldset>
+
+        <!-- Hidden timestamp, filled in by scripts/join.js on page load -->
+        <input type="hidden" name="timestamp" id="timestamp">
+
+        <button type="submit" class="submit-btn">Submit Application</button>
+      </form>
+
+      <!-- ===================== MEMBERSHIP CARDS ===================== -->
+      <div class="membership-cards">
+
+        <section class="tier-card tier-card--np">
+          <h2>NP Membership</h2>
+          <p class="tier-price">No fee</p>
+          <p>For registered non-profits and community groups working in Mtwapa.</p>
+          <button class="modal-link" type="button" data-modal-target="modal-np">See benefits</button>
+        </section>
+
+        <section class="tier-card tier-card--bronze">
+          <h2>Bronze Membership</h2>
+          <p class="tier-price">Entry-level</p>
+          <p>A solid starting point for new and small Mtwapa businesses.</p>
+          <button class="modal-link" type="button" data-modal-target="modal-bronze">See benefits</button>
+        </section>
+
+        <section class="tier-card tier-card--silver">
+          <h2>Silver Membership</h2>
+          <p class="tier-price">Mid-tier</p>
+          <p>More visibility and discounts for growing businesses.</p>
+          <button class="modal-link" type="button" data-modal-target="modal-silver">See benefits</button>
+        </section>
+
+        <section class="tier-card tier-card--gold">
+          <h2>Gold Membership</h2>
+          <p class="tier-price">Top-tier</p>
+          <p>Maximum exposure and benefits for established organizations.</p>
+          <button class="modal-link" type="button" data-modal-target="modal-gold">See benefits</button>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================== BENEFIT MODALS ===================== -->
+  <dialog class="benefits-modal" id="modal-np" style="--tier-color: var(--color-np)" aria-labelledby="modal-np-title">
+    <div class="modal-inner">
+      <h2 id="modal-np-title">NP Membership benefits</h2>
+      <ul>
+        <li>Free listing in the online business directory</li>
+        <li>Invitations to community and networking events</li>
+        <li>Access to chamber training workshops</li>
+        <li>Use of the chamber meeting hall for outreach events</li>
+      </ul>
+      <button class="modal-close" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <dialog class="benefits-modal" id="modal-bronze" style="--tier-color: var(--color-bronze)" aria-labelledby="modal-bronze-title">
+    <div class="modal-inner">
+      <h2 id="modal-bronze-title">Bronze Membership benefits</h2>
+      <ul>
+        <li>Standard listing in the online business directory</li>
+        <li>Invitations to community and networking events</li>
+        <li>10% discount on chamber-hosted training sessions</li>
+        <li>Monthly chamber newsletter feature eligibility</li>
+      </ul>
+      <button class="modal-close" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <dialog class="benefits-modal" id="modal-silver" style="--tier-color: var(--color-silver)" aria-labelledby="modal-silver-title">
+    <div class="modal-inner">
+      <h2 id="modal-silver-title">Silver Membership benefits</h2>
+      <ul>
+        <li>Enhanced directory listing with photos and links</li>
+        <li>20% discount on chamber events and training</li>
+        <li>Quarterly spotlight placement on the chamber home page</li>
+        <li>Priority booking for the chamber meeting hall</li>
+      </ul>
+      <button class="modal-close" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <dialog class="benefits-modal" id="modal-gold" style="--tier-color: var(--color-gold)" aria-labelledby="modal-gold-title">
+    <div class="modal-inner">
+      <h2 id="modal-gold-title">Gold Membership benefits</h2>
+      <ul>
+        <li>Premium directory listing at the top of search results</li>
+        <li>Free entry to all chamber events and training sessions</li>
+        <li>Monthly spotlight placement on the chamber home page</li>
+        <li>Dedicated chamber advocacy for permits and licensing support</li>
+      </ul>
+      <button class="modal-close" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="footer-wrap">
+
+      <div class="footer-contact">
+        <h2>Contact Us</h2>
+        <address>
+          Mtwapa Chamber of Commerce<br>
+          P.O. Box 1234, Mtwapa<br>
+          Kilifi County, Kenya<br>
+          Phone: (254) 700-000-111<br>
+          Email: info@mtwapachamber.org
+        </address>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.7 11.7 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.2 8.2 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2.1.3 2.6.5.7.3 1.1.6 1.6 1.1.5.5.8.9 1.1 1.6.2.5.4 1.4.5 2.6.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2.1-.5 2.6-.3.7-.6 1.1-1.1 1.6-.5.5-.9.8-1.6 1.1-.5.2-1.4.4-2.6.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2.1-.3-2.6-.5-.7-.3-1.1-.6-1.6-1.1-.5-.5-.8-.9-1.1-1.6-.2-.5-.4-1.4-.5-2.6-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2.1.5-2.6.3-.7.6-1.1 1.1-1.6.5-.5.9-.8 1.6-1.1.5-.2 1.4-.4 2.6-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.4-.3 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.1 1 .3 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.4.3-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.1-1-.3-2-.4-1.2-.1-1.6-.1-4.7-.1zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm5.2-2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+        </a>
+      </div>
+
+      <div class="footer-dev">
+        <p>Your Full Name</p>
+        <p>WDD 231 &mdash; Web Frontend Development I</p>
+        <p>&copy; <span id="currentYear"></span> Mtwapa Chamber of Commerce</p>
+        <p id="lastModified"></p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

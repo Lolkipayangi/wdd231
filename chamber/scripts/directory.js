@@ -1,7 +1,3 @@
-// =====================================================
-// Mtwapa Chamber of Commerce - directory.js
-// =====================================================
-
 // ---- Hamburger navigation toggle ----
 const navToggle = document.querySelector("#navToggle");
 const primaryNav = document.querySelector("#primaryNav");
@@ -41,16 +37,19 @@ async function getMemberData() {
 }
 
 // ---- Render member cards ----
+const EAGER_LOAD_COUNT = 3;
+
 function displayMembers(members) {
   const directoryEl = document.querySelector("#directory");
   directoryEl.innerHTML = "";
 
-  members.forEach((member) => {
+  members.forEach((member, index) => {
     const card = document.createElement("section");
     card.classList.add("member-card");
+    const loadingAttr = index < EAGER_LOAD_COUNT ? "eager" : "lazy";
 
     card.innerHTML = `
-      <img src="images/businesses/${member.image}" alt="${member.name} logo" loading="lazy" width="200" height="200">
+      <img src="images/businesses/${member.image}" alt="${member.name} logo" loading="${loadingAttr}" width="200" height="200">
       <span class="badge badge-${member.membership}">${membershipLabels[member.membership]}</span>
       <h2 class="member-name">${member.name}</h2>
       <p class="member-tagline">${member.tagline}</p>
