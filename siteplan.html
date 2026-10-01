@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rift Trails Kenya | Website Plan</title>
+  <meta name="description" content="Website plan for Rift Trails Kenya, a hiking guide and community site for trails across Kenya.">
+  <meta name="author" content="Claudio Lbartuni Lolkipayangi">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+<body>
+  <header>
+    <h1>Rift Trails Kenya: Website Plan</h1>
+    <p>WDD 231 Proposed Project | Claudio Lbartuni Lolkipayangi</p>
+    <nav aria-label="Plan sections">
+      <ul>
+        <li><a href="#name">Site Name</a></li>
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#scenarios">Scenarios</a></li>
+        <li><a href="#color">Colors</a></li>
+        <li><a href="#type">Typography</a></li>
+        <li><a href="#wireframe">Wireframe</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="name">
+      <h2>Site Name</h2>
+      <p><strong>Rift Trails Kenya</strong></p>
+      <ul>
+        <li>The name tells visitors the site is about hiking trails. "Rift" points to the Great Rift Valley, which shapes many of Kenya's best-known hikes, and "Kenya" makes the location clear.</li>
+        <li>It is short, easy to remember, and easy to fit into a logo.</li>
+      </ul>
+      <p>Optional domain availability: <code>rifttrailskenya.org</code> (availability not yet checked)</p>
+    </section>
+
+    <section id="purpose">
+      <h2>Site Purpose</h2>
+      <p>The site is a hub for hikers in Kenya. It will provide:</p>
+      <ul>
+        <li>A searchable list of trails, with the location, difficulty, length, and elevation gain of each one.</li>
+        <li>Details for each trail in a pop-up window, including the best season to go and what to bring.</li>
+        <li>A membership form for joining group hikes and receiving trail updates.</li>
+      </ul>
+      <p>The site will have three pages: Home, Trails, and Join. A separate form action page will display the submitted form data.</p>
+    </section>
+
+    <section id="scenarios">
+      <h2>Scenarios</h2>
+      <p>Questions a visitor from the target audience (beginner to intermediate hikers, locals and tourists) may ask:</p>
+      <ol>
+        <li>Which trails near Nairobi are good for a beginner on a half-day hike?</li>
+        <li>How hard is a particular trail, and how long will it take?</li>
+        <li>When is the best time of year to hike a particular trail?</li>
+        <li>How do I join a group hike or get in touch with the club?</li>
+      </ol>
+      <p class="note">Questions 1 to 3 are answered by the Trails page and its data. Question 4 is answered by the Join page.</p>
+    </section>
+
+    <section id="color">
+      <h2>Color Scheme</h2>
+      <p>The palette uses the deep blue-green of Rift Valley lakes, a pale mist background, dark ink for text, and an acacia gold accent. The same four colors style this document.</p>
+      <ul class="swatches">
+        <li class="swatch"><div class="swatch-color lake"></div><p><strong>Lake</strong><br>#0f3b4c</p></li>
+        <li class="swatch"><div class="swatch-color mist"></div><p><strong>Mist</strong><br>#edf3f1</p></li>
+        <li class="swatch"><div class="swatch-color ink"></div><p><strong>Ink</strong><br>#1b2a30</p></li>
+        <li class="swatch"><div class="swatch-color gold"></div><p><strong>Gold</strong><br>#e0a526</p></li>
+      </ul>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Color</th><th>Where it is used</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lake #0f3b4c</td><td>Header and footer backgrounds, headings, links, table headers, trail card borders</td></tr>
+            <tr><td>Mist #edf3f1</td><td>Page background, text on Lake backgrounds</td></tr>
+            <tr><td>Ink #1b2a30</td><td>Paragraph and list text</td></tr>
+            <tr><td>Gold #e0a526</td><td>Accents: header underline, heading markers, navigation links on Lake, focus outlines, and buttons (with Ink text)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Contrast will be verified with the DevTools CSS Overview and Lighthouse.</p>
+    </section>
+
+    <section id="type">
+      <h2>Typography</h2>
+      <p>Two fonts from Google Fonts are used, each with a fallback.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Font</th><th>Used for</th><th>Fallback</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bitter (600, 700)</td><td>Site name, page titles, headings, trail names on cards</td><td>Georgia, serif</td></tr>
+            <tr><td>Source Sans 3 (400, 600)</td><td>Body text, navigation, form labels, buttons, trail details</td><td>Arial, sans-serif</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="sample-heading">Bitter: Ngong Hills Ridge Trail</p>
+      <p class="sample-body">Source Sans 3: A moderate 3-hour hike with sweeping views over the Rift Valley and Nairobi.</p>
+    </section>
+
+    <section id="wireframe">
+      <h2>Wireframe</h2>
+      <p class="note">Add your own hand-drawn or tool-made black and white sketches here. Save them in the <code>images</code> folder using the file names below.</p>
+      <div class="wireframes">
+        <figure>
+          <img src="images/wireframeSmall.JPG" alt="Black and white wireframe of the home page on a small screen: header with logo and menu button, hero image, trail highlights stacked in one column, and footer." width="320" height="640">
+          <figcaption>Home page: small viewport</figcaption>
+        </figure>
+        <figure>
+          <img src="images/wireframeLarge.JPG" alt="Black and white wireframe of the home page on a large screen: header with horizontal navigation, hero image, trail highlights in three columns, and footer." width="640" height="480">
+          <figcaption>Home page: large viewport</figcaption>
+        </figure>
+      </div>
+      <h3>Layout notes</h3>
+      <ul>
+        <li><strong>Small screens:</strong> single column, hamburger menu that expands the navigation links.</li>
+        <li><strong>Large screens:</strong> horizontal navigation and trail highlights side by side.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Claudio Lbartuni Lolkipayangi | <a href="https://byui-cse.github.io/wdd231-ww-course/week06/project-description.html">Project description</a></p>
+  </footer>
+</body>
+</html>
