@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Standard meta content -->
-  <title>Thank You | Mtwapa Chamber of Commerce</title>
-  <meta name="description" content="Confirmation page for new membership applications to the Mtwapa Chamber of Commerce.">
+  <title>Discover Mtwapa | Mtwapa Chamber of Commerce</title>
+  <meta name="description" content="Explore heritage sites, beaches, creeks and wildlife around Mtwapa and the Kenya coast.">
   <meta name="author" content="Claudio Lbartuni Lolkipayangi">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 
   <!-- Facebook / Open Graph meta tags -->
-  <meta property="og:title" content="Thank You | Mtwapa Chamber of Commerce">
-  <meta property="og:description" content="Confirmation page for new membership applications to the Mtwapa Chamber of Commerce.">
-  <meta property="og:image" content="https://lolkipayangi.github.io/wdd231/chamber/images/join-social.jpg">
-  <meta property="og:url" content="https://lolkipayangi.github.io/wdd231/chamber/thankyou.html">
+  <meta property="og:title" content="Discover Mtwapa | Mtwapa Chamber of Commerce">
+  <meta property="og:description" content="Explore heritage sites, beaches, creeks and wildlife around Mtwapa and the Kenya coast.">
+  <meta property="og:image" content="https://lolkipayangi.github.io/wdd231/chamber/images/discover-social.jpg">
+  <meta property="og:url" content="https://lolkipayangi.github.io/wdd231/chamber/discover.html">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
@@ -24,12 +24,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets: normalize first, then mobile-first small.css, then larger.css -->
+  <!-- Stylesheets: normalize first, then mobile-first small.css, then larger.css, then discover.css -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/discover.css">
 
-  <script src="scripts/thankyou.js" defer></script>
+  <script src="scripts/discover.js" type="module" defer></script>
 </head>
 <body>
 
@@ -48,7 +49,7 @@
     <nav class="primary-nav" id="primaryNav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html">Discover</a></li>
+        <li><a href="discover.html" aria-current="page">Discover</a></li>
         <li><a href="directory.html">Directory</a></li>
         <li><a href="join.html">Join</a></li>
       </ul>
@@ -56,16 +57,17 @@
   </header>
 
   <main>
-    <section class="confirmation">
-      <h1>Thank you!!</h1>
-      <p>Thank you for applying for membership with the Mtwapa Chamber of Commerce. A member of our team will review your application and reach out within two business days.</p>
+    <div class="discover-intro">
+      <h1>Discover Mtwapa and the Kenya Coast</h1>
+      <p>From Swahili ruins and quiet creeks to white-sand beaches and wildlife parks, here are eight places that make our corner of the coast worth visiting, and worth doing business in.</p>
+    </div>
 
-      <ul class="summary-list" id="summaryList" aria-label="Submitted application details">
-        <!-- Populated by scripts/thankyou.js from the URL query string -->
-      </ul>
+    <div id="visitMessage" class="visit-message" role="status">
+      <p></p>
+      <button type="button" aria-label="Close message">&times;</button>
+    </div>
 
-      <a class="back-link" href="index.html">&larr; Back to home</a>
-    </section>
+    <section id="discoverGrid" class="discover-grid" aria-label="Places of interest"></section>
   </main>
 
   <footer class="site-footer">
