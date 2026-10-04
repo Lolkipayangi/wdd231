@@ -1,4 +1,3 @@
-import { places } from "../data/discover.mjs";
 
 /* ---------- Footer: year + last modified (kept from other pages) ---------- */
 const yearEl = document.getElementById("currentYear");
@@ -46,6 +45,15 @@ if (banner) {
 /* ---------- Cards ---------- */
 const container = document.getElementById("discoverGrid");
 
+async function loadPlaces() {
+  const url = new URL("../data/discover.json", import.meta.url);
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const data = await response.json();
+  return data.places;
+}
+
+function buildCards(places) {
 places.forEach((place, i) => {
   const card = document.createElement("article");
   card.className = "discover-card";
@@ -58,9 +66,10 @@ places.forEach((place, i) => {
   const img = document.createElement("img");
   img.src = place.image;
   img.alt = place.alt;
-  img.width = 300;
-  img.height = 200;
+  img.width = 600;
+  img.height = 400;
   img.loading = "lazy";
+  img.decoding = "async";
   figure.append(img);
 
   const address = document.createElement("address");
@@ -82,3 +91,10 @@ places.forEach((place, i) => {
   card.append(title, figure, address, desc, btn);
   container.append(card);
 });
+}
+
+loadPlaces()
+  .then(buildCards)
+  .catch(() => {
+    container.textContent = "Sorry, the places could not be loaded. Please try again later.";
+  });
