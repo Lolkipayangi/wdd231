@@ -66,12 +66,14 @@
       <!-- ===================== FORM ===================== -->
       <form class="join-form" method="get" action="thankyou.html">
 
+        <p class="form-note"><span class="req" aria-hidden="true">*</span> Required field</p>
+
         <fieldset>
           <legend>Applicant details</legend>
 
           <div class="form-row">
             <label class="form-field" for="firstName">
-              First name
+              First name <span class="req" aria-hidden="true">*</span>
               <input
                 type="text"
                 id="firstName"
@@ -82,7 +84,7 @@
             </label>
 
             <label class="form-field" for="lastName">
-              Last name
+              Last name <span class="req" aria-hidden="true">*</span>
               <input
                 type="text"
                 id="lastName"
@@ -94,7 +96,7 @@
           </div>
 
           <label class="form-field" for="orgTitle">
-            Title within your organization
+            Title within your organization <span class="optional">(optional)</span>
             <span class="field-hint">Letters, hyphens, and spaces only &mdash; at least 7 characters (e.g. "Operations Manager")</span>
             <input
               type="text"
@@ -107,7 +109,7 @@
 
           <div class="form-row">
             <label class="form-field" for="email">
-              Email address
+              Email address <span class="req" aria-hidden="true">*</span>
               <input
                 type="email"
                 id="email"
@@ -119,7 +121,8 @@
             </label>
 
             <label class="form-field" for="mobilePhone">
-              Mobile phone number
+              Mobile phone number <span class="req" aria-hidden="true">*</span>
+              <span class="field-hint">Include the country code, e.g. +254 700 000 111</span>
               <input
                 type="tel"
                 id="mobilePhone"
@@ -135,7 +138,7 @@
           <legend>Business details</legend>
 
           <label class="form-field" for="businessName">
-            Business/organization name
+            Business/organization name <span class="req" aria-hidden="true">*</span>
             <input
               type="text"
               id="businessName"
@@ -146,7 +149,7 @@
           </label>
 
           <label class="form-field" for="membershipLevel">
-            Membership level
+            Membership level <span class="req" aria-hidden="true">*</span>
             <select id="membershipLevel" name="membershipLevel" title="Choose a membership level" required>
               <option value="" selected disabled>Select a level&hellip;</option>
               <option value="np">NP Membership (non-profit, no fee)</option>
@@ -155,9 +158,10 @@
               <option value="gold">Gold Membership</option>
             </select>
           </label>
+          <p class="form-link-row"><a href="#membership-cards">Compare membership levels</a></p>
 
           <label class="form-field" for="businessDescription">
-            Tell us about your business
+            Tell us about your business <span class="optional">(optional)</span>
             <textarea
               id="businessDescription"
               name="businessDescription"
@@ -172,34 +176,34 @@
       </form>
 
       <!-- ===================== MEMBERSHIP CARDS ===================== -->
-      <div class="membership-cards">
+      <div class="membership-cards" id="membership-cards">
 
         <section class="tier-card tier-card--np">
           <h2>NP Membership</h2>
           <p class="tier-price">No fee</p>
           <p>For registered non-profits and community groups working in Mtwapa.</p>
-          <button class="modal-link" type="button" data-modal-target="modal-np">See benefits</button>
+          <button class="modal-link" type="button" data-modal-target="modal-np" aria-label="See NP Membership benefits">See benefits</button>
         </section>
 
         <section class="tier-card tier-card--bronze">
           <h2>Bronze Membership</h2>
           <p class="tier-price">Entry-level</p>
           <p>A solid starting point for new and small Mtwapa businesses.</p>
-          <button class="modal-link" type="button" data-modal-target="modal-bronze">See benefits</button>
+          <button class="modal-link" type="button" data-modal-target="modal-bronze" aria-label="See Bronze Membership benefits">See benefits</button>
         </section>
 
         <section class="tier-card tier-card--silver">
           <h2>Silver Membership</h2>
           <p class="tier-price">Mid-tier</p>
           <p>More visibility and discounts for growing businesses.</p>
-          <button class="modal-link" type="button" data-modal-target="modal-silver">See benefits</button>
+          <button class="modal-link" type="button" data-modal-target="modal-silver" aria-label="See Silver Membership benefits">See benefits</button>
         </section>
 
         <section class="tier-card tier-card--gold">
           <h2>Gold Membership</h2>
           <p class="tier-price">Top-tier</p>
           <p>Maximum exposure and benefits for established organizations.</p>
-          <button class="modal-link" type="button" data-modal-target="modal-gold">See benefits</button>
+          <button class="modal-link" type="button" data-modal-target="modal-gold" aria-label="See Gold Membership benefits">See benefits</button>
         </section>
 
       </div>
@@ -207,7 +211,7 @@
   </main>
 
   <!-- ===================== BENEFIT MODALS ===================== -->
-  <dialog class="benefits-modal" id="modal-np" style="--tier-color: var(--color-np)" aria-labelledby="modal-np-title">
+  <dialog class="benefits-modal" id="modal-np" aria-labelledby="modal-np-title">
     <div class="modal-inner">
       <h2 id="modal-np-title">NP Membership benefits</h2>
       <ul>
@@ -220,7 +224,7 @@
     </div>
   </dialog>
 
-  <dialog class="benefits-modal" id="modal-bronze" style="--tier-color: var(--color-bronze)" aria-labelledby="modal-bronze-title">
+  <dialog class="benefits-modal" id="modal-bronze" aria-labelledby="modal-bronze-title">
     <div class="modal-inner">
       <h2 id="modal-bronze-title">Bronze Membership benefits</h2>
       <ul>
@@ -233,7 +237,7 @@
     </div>
   </dialog>
 
-  <dialog class="benefits-modal" id="modal-silver" style="--tier-color: var(--color-silver)" aria-labelledby="modal-silver-title">
+  <dialog class="benefits-modal" id="modal-silver" aria-labelledby="modal-silver-title">
     <div class="modal-inner">
       <h2 id="modal-silver-title">Silver Membership benefits</h2>
       <ul>
@@ -246,7 +250,7 @@
     </div>
   </dialog>
 
-  <dialog class="benefits-modal" id="modal-gold" style="--tier-color: var(--color-gold)" aria-labelledby="modal-gold-title">
+  <dialog class="benefits-modal" id="modal-gold" aria-labelledby="modal-gold-title">
     <div class="modal-inner">
       <h2 id="modal-gold-title">Gold Membership benefits</h2>
       <ul>

@@ -9,6 +9,7 @@
   --color-text: #202b2a;        
   --color-text-light: #5c6b6a;   
   --color-border: #dfe3e0;
+  --color-field-border: #6f7d7b;  /* form control boundary, 3:1+ contrast */
 
   --color-gold: #7a5a1e;
   --color-gold-bg: #fbeed7;
@@ -115,9 +116,10 @@ a:focus {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 32px;
-  height: 24px;
-  padding: 0;
+  box-sizing: border-box;
+  width: 44px;   /* 32px of bars + padding = 44px tap target */
+  height: 44px;
+  padding: 10px 6px;
   order: 2;
 }
 
@@ -478,7 +480,7 @@ main {
   font-size: 1rem;
   font-weight: 400;
   padding: 0.6rem 0.7rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-field-border);
   border-radius: 6px;
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -496,13 +498,42 @@ main {
   outline-offset: 1px;
 }
 
-.join-form input:invalid:not(:placeholder-shown) {
+.join-form input:user-invalid,
+.join-form select:user-invalid,
+.join-form textarea:user-invalid {
   border-color: var(--color-secondary);
+  box-shadow: inset 0 0 0 1px var(--color-secondary);
+}
+
+.form-field .req {
+  color: var(--color-secondary);
+}
+
+.form-field .optional {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+}
+
+.form-note {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.form-note .req {
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+.form-link-row {
+  margin: -0.6rem 0 1.1rem;
+  font-size: 0.85rem;
 }
 
 .form-row {
   display: grid;
-  gap: 1.1rem;
+  gap: 0 1.1rem; /* vertical spacing comes from .form-field margin-bottom */
 }
 
 .submit-btn {
@@ -584,6 +615,9 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: underline;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .tier-card .modal-link:hover,
@@ -602,6 +636,11 @@ dialog.benefits-modal {
   border-top: 6px solid var(--tier-color);
   box-shadow: var(--shadow);
 }
+
+#modal-np { --tier-color: var(--color-np); }
+#modal-bronze { --tier-color: var(--color-bronze); }
+#modal-silver { --tier-color: var(--color-silver); }
+#modal-gold { --tier-color: var(--color-gold); }
 
 dialog.benefits-modal::backdrop {
   background-color: rgba(10, 79, 76, 0.55);
