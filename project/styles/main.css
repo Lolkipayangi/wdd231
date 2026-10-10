@@ -1182,3 +1182,10 @@ dialog::backdrop {
     scroll-behavior: auto;
   }
 }
+
+/* Larger tap targets for links that stand alone in lists */
+.site-footer li a,
+.trail-row h3 a {
+  display: inline-block;
+  padding: 0.25rem 0;
+}
