@@ -1,131 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rift Trails Kenya | Hiking trails and club</title>
-  <meta name="description" content="Find hiking trails across Kenya, with the difficulty, distance, climb and best season for each, and join a community of hikers.">
-  <meta name="author" content="Claudio Lbartuni Lolkipayangi">
-  <meta name="theme-color" content="#0f3b4c">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
-  <script>document.documentElement.classList.add('js');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claudio's Site</title>
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="icon" href="favicon.ico">
+
+    <!-- Open Graph meta tags for Facebook -->
+    <meta property="og:title" content="Claudio's Site">
+    <meta property="og:description" content="Home page of Claudio, a web development student from Kenya sharing his about me page and web certificate coursework.">
+    <meta property="og:image" content="https://lolkipayangi.github.io/images/profile_compressed.jpg">
+    <meta property="og:url" content="https://lolkipayangi.github.io/index.html">
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html">
-        <img src="images/logo.svg" alt="" width="44" height="44">
-        <span>Rift Trails Kenya</span>
-      </a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="visually-hidden">Menu</span>
-        <span class="menu-icon" aria-hidden="true"></span>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="trails.html">Trails</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media">
-        <img src="images/hero.svg" alt="Illustration of a hiker standing beside a Rift Valley lake at sunrise, with acacia trees and birds against a gold and blue sky." width="1600" height="720" fetchpriority="high">
-      </div>
-      <div class="hero-panel">
-        <h1 id="hero-title">Find your next hike in Kenya</h1>
-        <p>Compare trails from a morning forest loop in Nairobi to a four-day trek on Mount Kenya. Every trail lists its distance, climb, time and best season.</p>
-        <div class="hero-actions">
-          <a class="btn btn--primary" href="trails.html">Browse trails</a>
-          <a class="btn btn--light" href="join.html">Join the club</a>
+    <header>
+        <div class="logo">
+            <img src="images/home.svg" alt="Site logo" width="512" height="512">
+            <span>Claudio's Site</span>
         </div>
-      </div>
-    </section>
 
-    <div class="wrap">
-      <p id="visit-message" class="visit-message" role="status" hidden></p>
+        <button class="hamburger" id="menuToggle" aria-label="Open menu" aria-expanded="false"></button>
+    </header>
 
-      <section class="section" aria-labelledby="featured-title">
-        <h2 id="featured-title">Three hikes, three levels</h2>
-        <p class="lede">One easy, one moderate and one challenging trail show the range, from a shaded forest walk to a 4,985 metre summit.</p>
-        <ul id="featured-trails" class="card-grid card-grid--three">
-          <noscript><li><p class="notice">The trail highlights need JavaScript. You can still <a href="trails.html">browse all trails</a>.</p></li></noscript>
+    <!-- substitute for "desktop-links" -->
+    <nav class="navigation">
+        <ul>
+            <li class="current"><a href="#" aria-current="page">Home</a></li>
+            <li><a href="#">Chamber Project</a></li>
+            <li><a href="final/index.html">Final Project</a></li>
         </ul>
-      </section>
+    </nav>
+    
 
-      <section class="section" aria-labelledby="season-title">
-        <h2 id="season-title">In season this month</h2>
-        <p id="season-intro" class="lede">These trails are at their best at this time of year.</p>
-        <ul id="season-trails" class="trail-list"></ul>
-        <p style="margin-top:1.25rem"><a class="btn" href="trails.html">See all trails</a></p>
-      </section>
+    <main>
+        <h1>Home</h1>
 
-      <section id="saved-section" class="section" aria-labelledby="saved-title" hidden>
-        <h2 id="saved-title">Your saved trails</h2>
-        <p>These trails are stored in this browser, so you can find them again next time.</p>
-        <ul id="saved-trails" class="trail-list"></ul>
-      </section>
+        <section class="content-grid">
+            <div class="about-section">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>
+                        I am self composed person with unique problem-solving 
+                        ability. I am a father of four and very dependable. 
+                        I am from Kenya and love nature walk and bird watching. 
+                        My other hobbies include swimming. My favorite food is 
+                        Tilapia fish accompanied with Ugali, and kales. My favorite 
+                        fruit is pawpaw. I am health conscious person althout I have
+                        fast metabolism. I survived a fata car accident more than 
+                        15 years ago. My first born child is a girl aged eleven and 
+                        my second born is a son turning 10 years october 30th. My third
+                        born child is a contortionist aged 8 years old and my last
+                        born daughter is aged 3 years. 
+                    </p>
+                </div>
+            </div>
 
-      <section class="section" aria-labelledby="safety-title">
-        <h2 id="safety-title">Before you hike</h2>
-        <ul class="checklist">
-          <li><strong>Tell someone your plan.</strong> Share your route and the time you expect to be back.</li>
-          <li><strong>Carry enough water.</strong> Take at least 2 litres for a half-day hike and more for hot trails.</li>
-          <li><strong>Start early.</strong> Heat, cloud and afternoon storms build quickly in the highlands.</li>
-          <li><strong>Check the weather and the trail.</strong> In the rainy months, paths and gorges can become unsafe.</li>
-          <li><strong>Respect wildlife and park rules.</strong> Give animals space and keep food out of sight.</li>
-          <li><strong>Leave no trace.</strong> Stay on marked paths and carry your rubbish out.</li>
-        </ul>
-        <p>Park fees, guide rules and access can change. Confirm the details with the park, forest authority or a local guide before you travel.</p>
-      </section>
-    </div>
+            <div class="photo-section">
+                <h2>Student Photo</h2>
+                <div class="photo-container">
+                    <img src="images/profile_compressed.jpg" alt="Student photo">
+                </div>
+            </div>
+        </section>
 
-    <section class="cta-band" aria-labelledby="cta-title">
-      <div class="wrap">
-        <div>
-          <h2 id="cta-title">Hike with other people</h2>
-          <p>Join the club for trail updates and group hikes led at a steady, friendly pace.</p>
+        <section class="courses-section">
+            <h2>Web Certificate Courses</h2>
+
+            <div class="course-buttons">
+                <button type="button" id="all-btn" class="active">All</button>
+                <button type="button" id="wdd-btn">WDD</button>
+                <button type="button" id="cse-btn">CSE</button>
+            </div>
+
+
+            <div id="course-list"></div>
+
+            <p class="course-count">
+                Total Credits: <span id="total-credits">0</span>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social">
+            <a href="https://github.com/lolkipayangi" target="_blank">
+                <img src="images/github.svg" alt="GitHub" width="16" height="16">
+            </a>
+            <a href="https://www.linkedin.com/in/lolkipayangi/" target="_blank">
+                <img src="images/linkedin.svg" alt="LinkedIn" width="16" height="16">
+            </a>
+            <a href="https://www.facebook.com/lolkipayangi" target="_blank">
+                <img src="images/facebook.svg" alt="Facebook" width="16" height="16">
+            </a>
+            <a href="https://www.youtube.com/lolkipayangi" target="_blank">
+                <img src="images/youtube.svg" alt="YouTube" width="16" height="16">
+            </a>
         </div>
-        <a class="btn btn--primary" href="join.html">Join the club</a>
-      </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div>
-        <p class="footer-name">Rift Trails Kenya</p>
-        <p>A hiking guide and community for trails across Kenya, from Nairobi forests to the slopes of Mount Kenya.</p>
-      </div>
-      <nav aria-label="Footer">
-        <h2>Explore</h2>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="trails.html">Trails</a></li>
-          <li><a href="join.html">Join the club</a></li>
-          <li><a href="siteplan.html">Website plan</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h2>Built by Claudio</h2>
-        <ul>
-          <li><a href="https://github.com/lolkipayangi" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-          <li><a href="https://www.linkedin.com/in/lolkipayangi/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
-        </ul>
-      </div>
-      <p class="legal">&copy; <span id="currentyear">2026</span> Claudio Lbartuni Lolkipayangi, Kenya. WDD 231 project. <span id="lastModified"></span></p>
-    </div>
-  </footer>
+        <p>&copy; <span id="currentyear"></span> Claudio, Kenya</p>
+        <p id="lastModified"></p>
+        
+    </footer>
 
-  <script type="module" src="scripts/home.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/courselist.js"></script>
 </body>
 </html>
