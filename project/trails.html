@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trails | Rift Trails Kenya</title>
+  <meta name="description" content="Search and filter hiking trails across Kenya by difficulty, trip type and distance from Nairobi, and open each trail for highlights and what to bring.">
+  <meta name="author" content="Claudio Lbartuni Lolkipayangi">
+  <meta name="theme-color" content="#0f3b4c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span>Rift Trails Kenya</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trails.html" aria-current="page">Trails</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <div class="page-title">
+        <h1>Kenya hiking trails</h1>
+        <p class="lede">Filter by difficulty, trip type or distance from Nairobi, then open a trail to see its highlights, best season and what to bring.</p>
+      </div>
+
+      <section aria-labelledby="filter-title">
+        <h2 id="filter-title" class="visually-hidden">Filter and sort trails</h2>
+        <form id="filters" class="filters" aria-label="Trail filters">
+          <div class="filter-grid">
+            <div class="field">
+              <label for="query">Search by name or region</label>
+              <input type="search" id="query" name="query" autocomplete="off">
+            </div>
+            <div class="field">
+              <label for="difficulty">Difficulty</label>
+              <select id="difficulty" name="difficulty">
+                <option value="all">All levels</option>
+                <option value="Easy">Easy</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Challenging">Challenging</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="type">Trip type</label>
+              <select id="type" name="type">
+                <option value="all">Day hikes and treks</option>
+                <option value="Day hike">Day hikes</option>
+                <option value="Multi-day trek">Multi-day treks</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sort">Sort by</label>
+              <select id="sort" name="sort">
+                <option value="name">Name (A to Z)</option>
+                <option value="nearest">Nearest to Nairobi</option>
+                <option value="shortest">Shortest distance</option>
+                <option value="longest">Longest distance</option>
+                <option value="quickest">Shortest time</option>
+                <option value="climb">Biggest climb</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-checks">
+            <label class="check"><input type="checkbox" name="near"> Within 2 hours' drive of Nairobi</label>
+            <label class="check"><input type="checkbox" name="saved"> Saved trails only</label>
+          </div>
+          <div class="filter-footer">
+            <p id="result-count" class="result-count" role="status" aria-live="polite">Loading trails</p>
+            <button type="reset" class="btn">Clear filters</button>
+          </div>
+        </form>
+      </section>
+
+      <section aria-labelledby="results-title">
+        <h2 id="results-title" class="visually-hidden">Trail results</h2>
+        <ul id="trail-grid" class="card-grid">
+          <noscript><li><p class="notice">The trail list needs JavaScript to load. Please turn it on and refresh the page.</p></li></noscript>
+        </ul>
+      </section>
+
+      <section class="section" aria-labelledby="guide-title">
+        <h2 id="guide-title">How we rate difficulty</h2>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">Difficulty levels and what they mean</caption>
+            <thead>
+              <tr><th scope="col">Level</th><th scope="col">What to expect</th><th scope="col">Good for</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Easy</th><td>Mostly flat or gently rolling ground on clear paths, with little exposure to sun or wind.</td><td>Beginners, families and a first outing in new boots</td></tr>
+              <tr><th scope="row">Moderate</th><td>Steady climbs on uneven ground. Expect sun, wind or loose rock, and a long morning or most of a day.</td><td>Hikers with some experience and good fitness</td></tr>
+              <tr><th scope="row">Challenging</th><td>Steep, long or high-altitude routes, often with a guide, early starts and several days of planning.</td><td>Experienced hikers who are fit and well prepared</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="notice">Distances, climbs and times are approximate and change with the route you take and the season. Confirm access, fees and conditions with the park, forest authority or a local guide before you go.</p>
+      </section>
+    </div>
+
+    <dialog id="trail-dialog" aria-labelledby="dialog-title">
+      <div id="dialog-content"></div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-name">Rift Trails Kenya</p>
+        <p>A hiking guide and community for trails across Kenya, from Nairobi forests to the slopes of Mount Kenya.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="trails.html">Trails</a></li>
+          <li><a href="join.html">Join the club</a></li>
+          <li><a href="siteplan.html">Website plan</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Built by Claudio</h2>
+        <ul>
+          <li><a href="https://github.com/lolkipayangi" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://www.linkedin.com/in/lolkipayangi/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+      <p class="legal">&copy; <span id="currentyear">2026</span> Claudio Lbartuni Lolkipayangi, Kenya. WDD 231 project. <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/trails.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join the club | Rift Trails Kenya</title>
+  <meta name="description" content="Join Rift Trails Kenya for trail updates and group hikes. Tell us about your hiking experience and interests.">
+  <meta name="author" content="Claudio Lbartuni Lolkipayangi">
+  <meta name="theme-color" content="#0f3b4c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span>Rift Trails Kenya</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trails.html">Trails</a></li>
+        <li><a href="join.html" aria-current="page">Join</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <div class="page-title">
+        <h1>Join the club</h1>
+        <p class="lede">Sign up for trail updates, group hikes, or both. Tell us about your experience so we can point you to hikes that suit you.</p>
+      </div>
+
+      <div class="form-layout">
+        <form id="join-form" class="join-form" action="thankyou.html" method="get">
+          <p><span class="req" aria-hidden="true">*</span> Fields marked with an asterisk are required.</p>
+
+          <fieldset>
+            <legend>About you</legend>
+            <div class="form-row form-row--two">
+              <div class="field">
+                <label for="first_name">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="first_name" name="first_name" required minlength="2" maxlength="40" autocomplete="given-name">
+              </div>
+              <div class="field">
+                <label for="last_name">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="last_name" name="last_name" required minlength="2" maxlength="40" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-row form-row--two">
+              <div class="field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" pattern="^\+?[0-9\s\-]{9,15}$" autocomplete="tel" aria-describedby="phone-hint">
+                <span class="hint" id="phone-hint">Useful if a group hike changes at short notice.</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="experience">Hiking experience <span class="req" aria-hidden="true">*</span></label>
+              <select id="experience" name="experience" required>
+                <option value="">Choose one</option>
+                <option value="new">New to hiking</option>
+                <option value="beginner">A few easy hikes</option>
+                <option value="regular">Regular day hiker</option>
+                <option value="experienced">Experienced, including multi-day treks</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>How do you want to take part? <span class="req" aria-hidden="true">*</span></legend>
+            <label class="choice">
+              <input type="radio" name="level" value="updates" required>
+              <span><strong>Trail updates</strong><span class="choice-note">Emails about new trails, seasonal tips and conditions.</span></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="level" value="groups" required>
+              <span><strong>Group hikes</strong><span class="choice-note">Join organised hikes with other members and a hike leader.</span></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="level" value="both" required>
+              <span><strong>Updates and group hikes</strong><span class="choice-note">Everything above in one sign-up.</span></span>
+            </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>What are you interested in?</legend>
+            <label class="check"><input type="checkbox" name="interests" value="near-nairobi"> Day hikes near Nairobi</label>
+            <label class="check"><input type="checkbox" name="interests" value="mountains"> Mountain treks</label>
+            <label class="check"><input type="checkbox" name="interests" value="birding"> Bird watching walks</label>
+            <label class="check"><input type="checkbox" name="interests" value="forests"> Forest and nature walks</label>
+            <div class="field" style="margin-top:1rem">
+              <label for="trail">Trail you most want to hike</label>
+              <select id="trail" name="trail">
+                <option value="">No favourite yet</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Anything else?</legend>
+            <div class="field">
+              <label for="message">Questions or comments (optional)</label>
+              <textarea id="message" name="message" maxlength="300" aria-describedby="message-count"></textarea>
+              <span class="hint" id="message-count">300 characters left</span>
+            </div>
+          </fieldset>
+
+          <label class="check">
+            <input type="checkbox" name="consent" value="yes" required>
+            <span>I agree to receive emails from Rift Trails Kenya about trails and group hikes. <span class="req" aria-hidden="true">*</span></span>
+          </label>
+
+          <input type="hidden" id="timestamp" name="timestamp" value="">
+
+          <p style="margin-top:1.25rem"><button type="submit" class="btn btn--primary">Join the club</button></p>
+        </form>
+
+        <aside class="side-panel" aria-labelledby="aside-title">
+          <h2 id="aside-title">What to expect</h2>
+          <p>Group hikes start early, move at a steady pace and keep the group together. A hike leader checks everyone in at the start and counts everyone at the end.</p>
+          <h3>Have a question first?</h3>
+          <p>Use the comments box on the form and we will reply by email. Ask about a trail, the pace of a group hike, or what to bring.</p>
+          <h3>Your details</h3>
+          <p>We use your details only to contact you about Rift Trails Kenya. You can ask us to remove them at any time.</p>
+          <p>Not sure where to start? <a href="trails.html">Browse the trails</a> and save the ones you like.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-name">Rift Trails Kenya</p>
+        <p>A hiking guide and community for trails across Kenya, from Nairobi forests to the slopes of Mount Kenya.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="trails.html">Trails</a></li>
+          <li><a href="join.html">Join the club</a></li>
+          <li><a href="siteplan.html">Website plan</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Built by Claudio</h2>
+        <ul>
+          <li><a href="https://github.com/lolkipayangi" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <li><a href="https://www.linkedin.com/in/lolkipayangi/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+        </ul>
+      </div>
+      <p class="legal">&copy; <span id="currentyear">2026</span> Claudio Lbartuni Lolkipayangi, Kenya. WDD 231 project. <span id="lastModified"></span></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/join.js"></script>
+</body>
+</html>
