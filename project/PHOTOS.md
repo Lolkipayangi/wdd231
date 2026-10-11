@@ -1,6 +1,6 @@
 # Adding real photos
 
-Your photos are already in `images/photos/`. Six trails use them (Karura, Oloolua, Ngong Hills, Mount Kenya Sirimon and Chogoria, Mount Elgon), plus the home page hero, the home page gallery and the Join page. The other ten trails still show illustrations. Three extra Unsplash photos are saved in `images/photos/` for later: `gallery-aaron-simpson`, `gallery-holly-mandarich-slope` and `gallery-toomas-tartes`.
+Your photos are already in `images/photos/`. Nine trails use photos (Karura, Oloolua, Ngong Hills, Mount Kenya Sirimon and Chogoria, Mount Elgon, plus Ol Donyo Sabuk, Mount Longonot and Taita Hills, which use Unsplash photos marked as illustrative). The other seven trails still show illustrations.
 
 The site shows an illustration for every trail until you add a photo. To switch a trail to a photo:
 

@@ -53,7 +53,7 @@ export function trailCard(trail, { saved = false, mode = 'dialog' } = {}) {
       : `<button type="button" class="btn btn--primary" data-action="details" data-id="${esc(trail.id)}">View details<span class="visually-hidden"> for ${esc(trail.name)}</span></button>`;
 
   return `<li><article class="trail-card" data-id="${esc(trail.id)}">
-    <img src="${esc(trailImage(trail).src)}" alt="${esc(trailImage(trail).alt)}" width="560" height="350" loading="lazy" decoding="async">
+    <img src="${esc(trailImage(trail).src)}" alt="${esc(trailImage(trail).alt)}" width="520" height="325" loading="lazy" decoding="async">
     <div class="trail-card-body">
       <p class="badges">${difficultyBadge(trail.difficulty)}<span class="badge">${esc(trail.type)}</span></p>
       <h3>${esc(trail.name)}</h3>
@@ -96,7 +96,7 @@ export function monthChips(bestMonths) {
 
 export function detailMarkup(trail, saved) {
   return `<div class="dialog-close-wrap"><button type="button" class="dialog-close" data-action="close" aria-label="Close trail details">&times;</button></div>
-  <img class="dialog-image" src="${esc(trailImage(trail).src)}" alt="${esc(trailImage(trail).alt)}" width="560" height="350">
+  <img class="dialog-image" src="${esc(trailImage(trail).src)}" alt="${esc(trailImage(trail).alt)}" width="520" height="325">
   <div class="dialog-body">
     <p class="badges">${difficultyBadge(trail.difficulty)}<span class="badge">${esc(trail.type)}</span></p>
     <h2 id="dialog-title">${esc(trail.name)}</h2>

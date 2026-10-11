@@ -212,7 +212,10 @@
     "tips": "Start by 8 am so you finish before the afternoon heat. The rim path has steep drops on the crater side, so keep to the path and avoid walking in strong wind.",
     "image": "images/trails/mount-longonot.svg",
     "imageAlt": "Illustration of a volcano with a crater notch at its peak above a pale lake and acacia trees.",
-    "featured": false
+    "featured": false,
+    "photo": "images/photos/mount-longonot.webp",
+    "photoAlt": "Two hikers with backpacks walk up a gravel path toward a snow-capped mountain under heavy cloud.",
+    "photoCredit": "Toomas Tartes, Unsplash. Illustrative photo, not taken on this trail."
   },
   {
     "id": "crescent-island",
@@ -335,7 +338,10 @@
     "tips": "Keep food out of sight, because baboons will grab bags. Do not approach buffalo on the path and wait for them to move on.",
     "image": "images/trails/ol-donyo-sabuk.svg",
     "imageAlt": "Illustration of a rounded green mountain rising above plains with scattered trees.",
-    "featured": false
+    "featured": false,
+    "photo": "images/photos/ol-donyo-sabuk.webp",
+    "photoAlt": "Three hikers with heavy backpacks climb a dirt path through dry grassland toward a hilltop of bare trees.",
+    "photoCredit": "Aaron Simpson, Unsplash. Illustrative photo, not taken on this trail."
   },
   {
     "id": "menengai-crater",
@@ -661,6 +667,9 @@
     "tips": "Hire a local guide from Wundanyi, who knows the forest patches and the best birding spots. Start early because cloud often covers the top by midday.",
     "image": "images/trails/taita-hills-vuria.svg",
     "imageAlt": "Illustration of steep green hills with low cloud drifting through the valleys below a pale sky.",
-    "featured": false
+    "featured": false,
+    "photo": "images/photos/taita-hills-vuria.webp",
+    "photoAlt": "Two hikers and a dog follow a narrow path across a green mountain slope with patches of snow.",
+    "photoCredit": "Holly Mandarich, Unsplash. Illustrative photo, not taken on this trail."
   }
 ]
