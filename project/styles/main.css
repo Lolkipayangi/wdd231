@@ -1189,3 +1189,47 @@ dialog::backdrop {
   display: inline-block;
   padding: 0.25rem 0;
 }
+
+.photo-credit {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Photo gallery and Join page photo */
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 48rem) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery figure {
+  margin: 0;
+}
+
+.gallery img,
+.side-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  border: 2px solid var(--lake);
+  border-radius: var(--radius);
+}
+
+.gallery figcaption {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+}
+
+.side-photo {
+  margin-bottom: 1rem;
+}
