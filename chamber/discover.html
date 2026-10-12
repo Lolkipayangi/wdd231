@@ -3,108 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Standard meta content -->
-  <title>Discover Mtwapa | Mtwapa Chamber of Commerce</title>
+  <meta name="author" content="Claudio Lbartuni Lolkipayangi">
   <meta name="description" content="Explore heritage sites, beaches, creeks and wildlife around Mtwapa and the Kenya coast.">
-  <meta name="author" content="Lbartuni Lolkipayangi">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-
-  <!-- Facebook / Open Graph meta tags -->
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Discover Mtwapa | Mtwapa Chamber of Commerce">
   <meta property="og:description" content="Explore heritage sites, beaches, creeks and wildlife around Mtwapa and the Kenya coast.">
-  <meta property="og:image" content="https://lolkipayangi.github.io/wdd231/chamber/images/discover-social.jpg">
   <meta property="og:url" content="https://lolkipayangi.github.io/wdd231/chamber/discover.html">
-  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lolkipayangi.github.io/wdd231/chamber/images/discover-social.jpg">
+  <title>Discover Mtwapa | Mtwapa Chamber of Commerce</title>
 
-  <!-- Fonts -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Young+Serif&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets: normalize first, then mobile-first small.css, then larger.css, then discover.css -->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/small.css">
-  <link rel="stylesheet" href="styles/larger.css">
+  <link rel="stylesheet" href="styles/chamber-base.css">
   <link rel="stylesheet" href="styles/discover.css">
-
-  <script src="scripts/discover.js" type="module" defer></script>
 </head>
+
 <body>
-
   <header class="site-header">
-    <div class="site-branding">
-      <img src="images/logo.svg" alt="Mtwapa Chamber of Commerce logo">
-      <p class="site-title">Mtwapa Chamber<span>of Commerce</span></p>
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="Mtwapa Chamber of Commerce logo" width="48" height="48">
+        <span>Mtwapa Chamber<br>of Commerce</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html" aria-current="page">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primaryNav">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="primary-nav" id="primaryNav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="discover.html" aria-current="page">Discover</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main>
-    <div class="discover-intro">
-      <h1>Discover Mtwapa and the Kenya Coast</h1>
+  <main id="main">
+    <section class="page-intro" aria-labelledby="discover-title">
+      <h1 id="discover-title">Discover Mtwapa and the Kenya Coast</h1>
       <p>From Swahili ruins and quiet creeks to white-sand beaches and wildlife parks, here are eight places that make our corner of the coast worth visiting, and worth doing business in.</p>
-    </div>
+    </section>
 
-    <div id="visitMessage" class="visit-message" role="status">
-      <p></p>
-      <button type="button" aria-label="Close message">&times;</button>
-    </div>
+    <aside id="visit-message" class="visit-note" aria-live="polite" hidden>
+      <p id="visit-text"></p>
+      <button type="button" id="dismiss-visit" aria-label="Dismiss visit message">&times;</button>
+    </aside>
 
-    <section id="discoverGrid" class="discover-grid" aria-label="Places of interest"></section>
+    <section class="places-wrap" aria-label="Places to visit">
+      <div id="places" class="places">
+        <p class="status">Loading places&hellip;</p>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-wrap">
-
-      <div class="footer-contact">
-        <h2>Contact Us</h2>
+    <div class="footer-inner">
+      <div>
+        <h2>Contact us</h2>
         <address>
           Mtwapa Chamber of Commerce<br>
           P.O. Box 1234, Mtwapa<br>
           Kilifi County, Kenya<br>
-          Phone: (254) 700-000-111<br>
-          Email: info@mtwapachamber.org
+          Phone: <a href="tel:+254700000111">(254) 700-000-111</a><br>
+          Email: <a href="mailto:info@mtwapachamber.org">info@mtwapachamber.org</a>
         </address>
       </div>
-
-      <div class="footer-social">
-        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>
-        </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.7 11.7 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.2 8.2 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg>
-        </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2.1.3 2.6.5.7.3 1.1.6 1.6 1.1.5.5.8.9 1.1 1.6.2.5.4 1.4.5 2.6.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2.1-.5 2.6-.3.7-.6 1.1-1.1 1.6-.5.5-.9.8-1.6 1.1-.5.2-1.4.4-2.6.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2.1-.3-2.6-.5-.7-.3-1.1-.6-1.6-1.1-.5-.5-.8-.9-1.1-1.6-.2-.5-.4-1.4-.5-2.6-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-2.1.5-2.6.3-.7.6-1.1 1.1-1.6.5-.5.9-.8 1.6-1.1.5-.2 1.4-.4 2.6-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.1.4-.3 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.1 1 .3 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.1-.4.3-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.1-1-.3-2-.4-1.2-.1-1.6-.1-4.7-.1zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm5.2-2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
-        </a>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="thankyou.html">Thank you</a></li>
+        </ul>
       </div>
-
-      <div class="footer-dev">
-        <p>Lbartuni Lolkipayangi</p>
-        <p>WDD 231 &mdash; Web Frontend Development I</p>
-        <p>&copy; <span id="currentYear"></span> Mtwapa Chamber of Commerce</p>
-        <p id="lastModified"></p>
+      <div>
+        <h2>Follow us</h2>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
       </div>
-
+    </div>
+    <div class="credit">
+      <p>Claudio Lbartuni Lolkipayangi</p>
+      <p>WDD 231 &mdash; Web Frontend Development I</p>
+      <p>&copy; <span id="year"></span> Mtwapa Chamber of Commerce</p>
     </div>
   </footer>
 
+  <script src="scripts/discover.js" type="module"></script>
 </body>
 </html>

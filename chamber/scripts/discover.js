@@ -1,100 +1,90 @@
+const placesContainer = document.getElementById('places');
+const visitMessage = document.getElementById('visit-message');
+const visitText = document.getElementById('visit-text');
+const dismissButton = document.getElementById('dismiss-visit');
+const yearSpan = document.getElementById('year');
 
-/* ---------- Footer: year + last modified (kept from other pages) ---------- */
-const yearEl = document.getElementById("currentYear");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
-const modEl = document.getElementById("lastModified");
-if (modEl) modEl.textContent = `Last Modified: ${document.lastModified}`;
-
-/* ---------- Mobile navigation toggle ---------- */
-const navToggle = document.getElementById("navToggle");
-const primaryNav = document.getElementById("primaryNav");
-if (navToggle && primaryNav) {
-  navToggle.addEventListener("click", () => {
-    const open = primaryNav.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(open));
-  });
-}
-
-/* ---------- Visit message (localStorage) ---------- */
+const VISIT_KEY = 'mtwapa-last-visit';
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
-const KEY = "mtwapa-last-visit";
 
-function visitMessage() {
-  const now = Date.now();
-  let last = null;
+yearSpan.textContent = new Date().getFullYear();
+
+/* Visit message, based on the last visit stored in localStorage */
+function showVisitMessage() {
+  let message = 'Welcome! Let us know if you have any questions.';
+
   try {
-    last = Number(localStorage.getItem(KEY)) || null;
-    localStorage.setItem(KEY, String(now));
-  } catch {
-    /* storage unavailable: treat as first visit */
+    const lastVisit = Number(localStorage.getItem(VISIT_KEY));
+    const now = Date.now();
+
+    if (lastVisit) {
+      const days = Math.floor((now - lastVisit) / MS_PER_DAY);
+      if (days < 1) {
+        message = 'Back so soon! Awesome!';
+      } else {
+        message = `You last visited ${days} ${days === 1 ? 'day' : 'days'} ago.`;
+      }
+    }
+
+    localStorage.setItem(VISIT_KEY, String(now));
+  } catch (error) {
+    console.error('Storage is not available:', error);
   }
 
-  if (!last) return "Welcome! Let us know if you have any questions.";
-
-  const days = Math.floor((now - last) / MS_PER_DAY);
-  if (days < 1) return "Back so soon! Awesome!";
-  return `You last visited ${days} ${days === 1 ? "day" : "days"} ago.`;
+  visitText.textContent = message;
+  visitMessage.hidden = false;
 }
 
-const banner = document.getElementById("visitMessage");
-if (banner) {
-  banner.querySelector("p").textContent = visitMessage();
-  banner.querySelector("button").addEventListener("click", () => banner.remove());
-}
+dismissButton.addEventListener('click', () => {
+  visitMessage.hidden = true;
+});
 
-/* ---------- Cards ---------- */
-const container = document.getElementById("discoverGrid");
+/* Place cards, built from data/discover.json */
+function buildPlace(place) {
+  const item = document.createElement('article');
+  item.className = 'place-item';
 
-async function loadPlaces() {
-  const url = new URL("../data/discover.json", import.meta.url);
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  const data = await response.json();
-  return data.places;
-}
-
-function buildCards(places) {
-places.forEach((place, i) => {
-  const card = document.createElement("article");
-  card.className = "discover-card";
-  card.style.gridArea = `card${i + 1}`;
-
-  const title = document.createElement("h2");
-  title.textContent = place.name;
-
-  const figure = document.createElement("figure");
-  const img = document.createElement("img");
+  const figure = document.createElement('figure');
+  const img = document.createElement('img');
   img.src = place.image;
   img.alt = place.alt;
-  img.width = 600;
-  img.height = 400;
-  img.loading = "lazy";
-  img.decoding = "async";
+  img.width = 300;
+  img.height = 200;
+  img.loading = 'lazy';
   figure.append(img);
 
-  const address = document.createElement("address");
+  const body = document.createElement('div');
+  body.className = 'place-body';
+
+  const name = document.createElement('h2');
+  name.textContent = place.name;
+
+  const address = document.createElement('address');
   address.textContent = place.address;
 
-  const desc = document.createElement("p");
-  desc.textContent = place.description;
+  const description = document.createElement('p');
+  description.textContent = place.description;
 
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "learn-more";
-  btn.textContent = "Learn more";
-  btn.setAttribute("aria-label", `Learn more about ${place.name}`);
-  btn.addEventListener("click", () => {
-    const q = encodeURIComponent(`${place.name} ${place.address}`);
-    window.open(`https://www.google.com/maps/search/${q}`, "_blank", "noopener");
-  });
-
-  card.append(title, figure, address, desc, btn);
-  container.append(card);
-});
+  body.append(name, address, description);
+  item.append(figure, body);
+  return item;
 }
 
-loadPlaces()
-  .then(buildCards)
-  .catch(() => {
-    container.textContent = "Sorry, the places could not be loaded. Please try again later.";
-  });
+async function loadPlaces() {
+  try {
+    const response = await fetch('data/discover.json');
+    if (!response.ok) {
+      throw new Error(`Request failed: ${response.status}`);
+    }
+    const data = await response.json();
+
+    placesContainer.innerHTML = '';
+    data.places.forEach((place) => placesContainer.append(buildPlace(place)));
+  } catch (error) {
+    console.error(error);
+    placesContainer.innerHTML = '<p class="status">Places could not be loaded. Please try again later.</p>';
+  }
+}
+
+showVisitMessage();
+loadPlaces();
