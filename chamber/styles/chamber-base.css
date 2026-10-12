@@ -121,3 +121,9 @@ h1, h2, h3 { font-family: var(--font-head); font-weight: 400; line-height: 1.2; 
 @media (prefers-reduced-motion: no-preference) {
   .action, .site-nav a { transition: background-color .15s ease; }
 }
+
+@media (max-width: 520px) {
+  .header-inner { justify-content: center; text-align: center; }
+  .site-nav ul { justify-content: center; }
+  .site-nav a { padding: .5rem .7rem; }
+}
