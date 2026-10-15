@@ -171,7 +171,7 @@
     "tips": "Hire a local guide at the gate, who will show you the safe route through the narrow section. Check the weather before you enter, and leave the gorge at once if rain starts upstream.",
     "image": "images/trails/hells-gate-gorge.jpg",
     "imageAlt": "Illustration of a narrow gorge with warm clay-coloured cliff walls and a tall rock tower in the middle.",
-    "featured": false
+    "featured": true
   },
   {
     "id": "mount-longonot",
