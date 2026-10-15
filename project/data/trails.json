@@ -169,9 +169,9 @@
       "Park entry fee"
     ],
     "tips": "Hire a local guide at the gate, who will show you the safe route through the narrow section. Check the weather before you enter, and leave the gorge at once if rain starts upstream.",
-    "image": "images/trails/hells-gate-gorge.jfif",
+    "image": "images/trails/hells-gate-gorge.webp",
     "imageAlt": "Illustration of a narrow gorge with warm clay-coloured cliff walls and a tall rock tower in the middle.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "mount-longonot",
@@ -256,7 +256,7 @@
     "tips": "Walk slowly and keep your distance from the animals. Book the boat transfer in advance in the busy holiday months.",
     "image": "images/trails/crescent-island.jpg",
     "imageAlt": "Illustration of a flat island in a still blue lake with an acacia tree and birds flying overhead.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "mount-suswa",
@@ -297,7 +297,7 @@
     "tips": "Only enter the caves with a local guide, because the rock is uneven and the tunnels are completely dark. Arrange the visit through the conservancy before you travel.",
     "image": "images/trails/mount-suswa.jpg",
     "imageAlt": "Illustration of a wide crater rim with a dark inner bowl and thin plumes of steam rising.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "ol-donyo-sabuk",
@@ -382,7 +382,7 @@
     "tips": "Use a local guide from the community group at the gate. Keep well back from the crater edge, especially in mist or wind.",
     "image": "images/trails/menengai-crater.jpg",
     "imageAlt": "Illustration of a broad caldera rim with a dark crater floor and a warm sky behind it.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "eburru-forest",
@@ -423,7 +423,7 @@
     "tips": "Walk with a local guide, since paths branch often and are not signed. Tell someone your route and expected return time.",
     "image": "images/trails/eburru-forest.jpg",
     "imageAlt": "Illustration of a forested mountain with thin plumes of steam rising from its slope.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "mount-kenya-sirimon",
@@ -586,7 +586,7 @@
     "tips": "Save your energy for the climb out. Leave the valley floor before the midday heat and keep well back from the cliff edge at the View Point.",
     "image": "images/trails/kerio-valley-escarpment.jpg",
     "imageAlt": "Illustration of a high cliff edge looking over a hazy valley in layers of blue and gold.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "kakamega-forest",
@@ -626,7 +626,7 @@
     "tips": "Hire a local birding guide who knows where the species live. Walk quietly and early, since activity drops by midday.",
     "image": "images/trails/kakamega-forest.jpg",
     "imageAlt": "Illustration of dense rainforest canopy in many greens with a bird flying across the sky.",
-    "featured": true
+    "featured": false
   },
   {
     "id": "taita-hills-vuria",

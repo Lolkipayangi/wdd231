@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.classList.add('js');</script>
   <title>Trails | Rift Trails Kenya</title>
   <meta name="robots" content="index, follow">
   <meta name="description" content="Search and filter hiking trails across Kenya by difficulty, trip type and distance from Nairobi, and open each trail for highlights and what to bring.">
@@ -12,8 +13,8 @@
   <meta property="og:site_name" content="Rift Trails Kenya">
   <meta property="og:title" content="Trails | Rift Trails Kenya">
   <meta property="og:description" content="Search and filter hiking trails across Kenya by difficulty, trip type and distance from Nairobi, and open each trail for highlights and what to bring.">
-  <meta property="og:url" content="https://lolkipayangi.github.io/wdd231/project/trails.html">
-  <meta property="og:image" content="https://lolkipayangi.github.io/wdd231/project/images/og-image.jpg">
+  <meta property="og:url" content="https://lolkipayangi.github.io/project/trails.html">
+  <meta property="og:image" content="https://lolkipayangi.github.io/project/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Three hikers walking along a forest path, with the words Rift Trails Kenya.">
@@ -21,11 +22,10 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="canonical" href="https://lolkipayangi.github.io/wdd231/project/trails.html">
+  <link rel="canonical" href="https://lolkipayangi.github.io/project/trails.html">
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/trails.css">
-  <script src="scripts/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -46,20 +46,6 @@
         <li><a href="join.html">Join</a></li>
       </ul>
       </nav>
-    </div>
-    <div class="nav-container">
-        <a href="index.html" class="logo">Rift Trails Kenya</a>
-        
-        <!-- 🍔 Hamburger Button: Uses an id for JS targeting and an aria attribute for accessibility -->
-        <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
-        
-        <nav id="primary-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="trails.html">Trails</a></li>
-                <li><a href="join.html">Join</a></li>
-            </ul>
-        </nav>
     </div>
   </header>
 
@@ -134,11 +120,7 @@
             </thead>
             <tbody>
               <tr><th scope="row">Easy</th><td>Mostly flat or gently rolling ground on clear paths, with little exposure to sun or wind.</td><td>Beginners, families and a first outing in new boots</td></tr>
-              <tr><th scope="row">Moderate</th><td>Steady climbs on uneven ground. Expect sun, wind or loose rock, and a long morning or most of a day.</td><td>Hi<section aria-labelledby="results-title">
-  <h2 id="results-title" class="visually-hidden">Trail results</h2>
-  <ul id="trail-grid" class="card-grid"></ul>
-  <noscript><p class="notice">The trail list needs JavaScript to load. Please turn it on and refresh the page.</p></noscript>
-</section>s with some experience and good fitness</td></tr>
+              <tr><th scope="row">Moderate</th><td>Steady climbs on uneven ground. Expect sun, wind or loose rock, and a long morning or most of a day.</td><td>Hikers with some experience and good fitness</td></tr>
               <tr><th scope="row">Challenging</th><td>Steep, long or high-altitude routes, often with a guide, early starts and several days of planning.</td><td>Experienced hikers who are fit and well prepared</td></tr>
             </tbody>
           </table>

@@ -3,6 +3,7 @@
 import { MONTHS } from './data.js';
 
 export function esc(value) {
+  if (value === null || value === undefined) return '';
   return String(value)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')

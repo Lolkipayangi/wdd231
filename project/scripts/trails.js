@@ -151,20 +151,4 @@ dialog.addEventListener('close', () => {
 });
 
 init();
-// Wait for DOM to fully load
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menu-toggle");
-    const primaryNav = document.getElementById("primary-nav");
-
-    // Toggle the 'open' class and swap icon symbols between ☰ and ✖
-    menuToggle.addEventListener("click", () => {
-        primaryNav.classList.toggle("open");
-        
-        if (primaryNav.classList.contains("open")) {
-            menuToggle.innerHTML = "&#10006;"; // ✖ Close symbol
-        } else {
-            menuToggle.innerHTML = "&#9776;"; // ☰ Hamburger symbol
-        }
-    });
-});
 
