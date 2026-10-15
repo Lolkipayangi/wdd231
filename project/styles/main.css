@@ -43,6 +43,67 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+/* --- Base Mobile Styles (Small Screens) --- */
+
+/* Hide navigation items by default on mobile */
+#primary-nav {
+    display: none;
+    width: 100%;
+}
+
+/* Style and display the hamburger button */
+#menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333; /* Match your project theme colors */
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Class dynamically added by JavaScript to show menu when clicked */
+#primary-nav.open {
+    display: block;
+}
+
+/* Optional styling to stack vertical links nicely on mobile */
+#primary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#primary-nav li a {
+    display: block;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-decoration: none;
+}
+
+
+/* --- Desktop Responsive Media Query (e.g., 768px and up) --- */
+@media (min-width: 48rem) {
+    /* Hide the hamburger button on larger screens */
+    #menu-toggle {
+        display: none;
+    }
+
+    /* Force the navigation to always remain visible horizontally */
+    #primary-nav {
+        display: block !important; 
+        width: auto;
+    }
+    
+    #primary-nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    #primary-nav li a {
+        border-bottom: none;
+    }
+}
+
 
 main {
   flex: 1;
